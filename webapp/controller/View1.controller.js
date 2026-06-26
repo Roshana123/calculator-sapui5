@@ -6,40 +6,51 @@ sap.ui.define([
 
     return Controller.extend("com.demo.b74sapui5app.controller.View1", {
         onInit() {
-        },
-       
-
-        onAdd: function () {
-            var num1 = this.getView().byId("number1").getValue();
-            var num2 = this.getView().byId("number2").getValue();
-            var res = parseInt(num1) + parseInt(num2);
-            this.getView().byId("result").setValue(res);
+            this._number1 = this.getView().byId("number1");
+            this._number2 = this.getView().byId("number2");
+            this._result = this.getView().byId("result");
         },
 
-        onSubtract: function () {
-            var num1 = this.getView().byId("number1").getValue();
-            var num2 = this.getView().byId("number2").getValue();
-            var res = parseInt(num1) - parseInt(num2);
-            this.getView().byId("result").setValue(res);
-        },
-        onMultiply: function () {
-            var num1 = this.getView().byId("number1").getValue();
-            var num2 = this.getView().byId("number2").getValue();
-            var res = parseInt(num1) * parseInt(num2);
-            this.getView().byId("result").setValue(res);
-        },
-        onDivide: function () {
-            var num1 = this.getView().byId("number1").getValue();
-            var num2 = this.getView().byId("number2").getValue();
+        _getValues() {
+            const num1 = parseFloat(this._number1.getValue());
+            const num2 = parseFloat(this._number2.getValue());
 
-            if (num2 === 0) {
-                MessageBox.error("Division by zero is not allowed.");
-
+            if (isNaN(num1) || isNaN(num2)) {
+                MessageBox.error(this.getView().getModel("i18n").getResourceBundle().getText("invalidInput"));
+                return null;
             }
-            var res = num1 / num2;
-            this.getView().byId("result").setValue(res);
+
+            return { num1, num2 };
+        },
+
+        onAdd() {
+            const values = this._getValues();
+            if (!values) { return; }
+            this._result.setValue(values.num1 + values.num2);
+        },
+
+        onSubtract() {
+            const values = this._getValues();
+            if (!values) { return; }
+            this._result.setValue(values.num1 - values.num2);
+        },
+
+        onMultiply() {
+            const values = this._getValues();
+            if (!values) { return; }
+            this._result.setValue(values.num1 * values.num2);
+        },
+
+        onDivide() {
+            const values = this._getValues();
+            if (!values) { return; }
+
+            if (values.num2 === 0) {
+                MessageBox.error(this.getView().getModel("i18n").getResourceBundle().getText("divisionByZero"));
+                return;
+            }
+
+            this._result.setValue(values.num1 / values.num2);
         }
-
-
     });
 });
