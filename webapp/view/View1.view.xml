@@ -2,56 +2,73 @@
     controllerName="com.demo.b74sapui5app.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
     xmlns:core="sap.ui.core"
 >
     <Page
         id="page"
-        title="{i18n>calculatorTitle}"
+        title="Calculator"
         titleAlignment="center"
+
     >
         <content>
             <VBox
                 width="30%"
                 class="bgcolor"
+            
             >
+              
+               
+
                 <Label
-                    text="{i18n>number1}"
+                    text="Number 1"
                     labelFor="number1"
-                    class="labelColor"
+                
                 />
                 <Input
                     id="number1"
                     type="Number"
-                    placeholder="{i18n>enterNumber1}"
-                    class="labelColor"
+                    placeholder="Enter Number1"
+                      class="labelcolor"
                 />
                 <Label
-                    text="{i18n>number2}"
+                    text="Number 2"
                     labelFor="number2"
-                    class="labelColor"
+                  
                 />
                 <Input
                     id="number2"
                     type="Number"
-                    placeholder="{i18n>enterNumber2}"
-                    class="labelColor"
+                    placeholder="Enter Number2"
+                      class="labelcolor"
                 />
                 <HBox>
-                    <Button text="+" press="onAdd" />
-                    <Button text="-" press="onSubtract" />
-                    <Button text="*" press="onMultiply" />
-                    <Button text="/" press="onDivide" />
+                    <Button
+                        text="+"
+                        press="onAdd"
+                    />
+                    <Button
+                        text="-"
+                        press="onSubtract"
+                    />
+                    <Button
+                        text="*"
+                        press="onMultiply"
+                    />
+                    <Button
+                        text="/"
+                        press="onDivide"
+                    />
                 </HBox>
                 <Label
-                    text="{i18n>result}"
+                    text="Result"
                     labelFor="result"
-                    class="labelColor"
+                    
                 />
                 <Input
                     id="result"
-                    placeholder="{i18n>enterResult}"
-                    editable="false"
-                    class="labelColor"
+                    placeholder="Enter Result"
+                      class="labelcolor"
                 />
             </VBox>
         </content>

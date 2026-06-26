@@ -1,4 +1,7 @@
 /* Enter your custom styles here */
+.textColor {
+    color: #1a73e8;
+}
 
 .bgcolor {
     background-color: #ffffff;
@@ -8,19 +11,21 @@
     margin: 20px auto;
 }
 
-.labelColor {
+.lablecolor {
     font-size: 14px;
     font-weight: 600;
     color: #333;
 }
 
-#page .sapMInputBaseInner {
-    border-radius: 8px;
+.sapMInput {
+    border-radius: 8px !important;
+    margin: 8px 0 16px !important;
 }
 
-#page .sapMBtnInner {
-    border-radius: 8px;
-    min-width: 48px;
+.sapMBtn {
+    border-radius: 8px !important;
+    margin: 4px !important;
+    min-width: 48px !important;
 }
 
 #page {
@@ -28,7 +33,6 @@
     font-size: 20px;
     font-weight: bold;
     color: #fff;
-    padding: 16px;
 }
 
 #page .sapMLabel {
