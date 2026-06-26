@@ -1,0 +1,42 @@
+/* Enter your custom styles here */
+.textColor {
+    color: #1a73e8;
+}
+
+.bgcolor {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 24px;
+    margin: 20px auto;
+}
+
+.lablecolor {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sapMInput {
+    border-radius: 8px !important;
+    margin: 8px 0 16px !important;
+}
+
+.sapMBtn {
+    border-radius: 8px !important;
+    margin: 4px !important;
+    min-width: 48px !important;
+}
+
+#page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#page .sapMLabel {
+    color: #555;
+    font-size: 14px;
+    margin-top: 8px;
+}
